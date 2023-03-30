@@ -1,0 +1,169 @@
+      *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      #nav{
+            width: 100%;
+            height: 80px;
+            display: flex;
+            margin: auto;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+        #option{
+            width: 60%;
+            display: flex;
+            justify-content: space-around;
+        } 
+        #option>a{
+            text-decoration: none;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: black;
+        }
+        #login{
+            width: 120px;
+            display: flex;
+            justify-content: space-around;
+        }
+        #login>a{
+            text-decoration: none;
+            color: black;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+        #login>span{
+            font-weight: bolder;
+        }
+        #top{
+            margin: auto;
+            width: 100%;
+        }
+        #top>img{
+            width: 100%;
+        }
+        #logo{
+             width: 120px;
+        }
+        #logo>img{
+             width: 100%;
+        }
+        #menu>img{
+            width: 30px;
+        }
+        #menu>img:nth-child(2){
+            width: 35px;
+        }
+        #menu{
+            width: 100px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        #poster{
+            width: 100%;
+        }
+        #poster>img{
+            width: 100%;
+        }
+        #advertise{
+            width: 100%;
+        }
+        #advertise>img{
+            width: 100%;
+        }
+        #mid{
+            margin-top: 20px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 20px;
+        }
+        #mid>.info{
+            padding: 80px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        #mid>.info>button{
+            background-color: black;
+            color: white;
+            padding: 5px;
+            border: none;
+        }
+        #mid>.products{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 10px;
+        }
+        #mid>.products>img{
+            width: 100%;
+            /* border: 1px solid red; */
+            gap: 10px;
+            background-color: rgb(200, 197, 197);
+        }
+        #mid2{
+            margin-top: 25px;
+            width: 100%;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        #mid2>img{
+            width: 100%;
+        }
+        #mid3{
+            margin-top: 25px;
+            width: 100%;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        #mid3>img{
+            width: 100%;
+        }
+        #slogan1{
+            width: 100%;
+            text-align: center;
+            margin: auto;
+            margin-top: 60px;
+            margin-bottom: 50px;
+        }
+        #footer3{
+            width: 100%;
+            margin: auto;
+            text-align: center;
+            background-color: rgb(230, 228, 228);
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        .brands{
+            width: 100%;
+            margin: auto;
+        }
+        .brands>img{
+            width: 100%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        #footer2>img{
+            width: 100%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        #arrivals{
+            width: 90%;
+            display: none;
+        }
+        #option>a:nth-child(1):hover{
+            font-weight: bold;
+        }
+
+        @media all and (min-width: 551px) and (max-width: 1000px) {
+            #nav>#option{
+                display: none;
+            }
+            #mid{
+                grid-template-columns: repeat(3,1fr);
+            }
+          }
+          @media all and (max-width: 550px) {
+            #nav>#option{
+                display: none;
+            }
+            #mid{
+                grid-template-columns: repeat(1,1fr);
+            }
+          }
