@@ -1,5 +1,3 @@
-// array for home page new arrival part
-
 let products = 
 [
     {
@@ -53,7 +51,7 @@ let products =
     },
     {
         title : "Khaki Beige Buoy Tote Bag",
-        img : "abhttps://images.dailyobjects.com/marche/product-images/1204/dailyobjects-khaki-beige-buoy-tote-bag-images/DailyObjects-Khaki-Beige-Buoyant-Tote-Bag.png?tr=cm-pad_resize,v-2,w-399,h-654,dpr-1cd",
+        img : "https://images.dailyobjects.com/marche/product-images/1204/langoor-idyll-tote-images/White-Idyll-Tote.png?tr=cm-pad_resize,v-2,w-399,h-654,dpr-1",
         category : "backpack",
         price : 2299,
         prodId : 8
@@ -214,3 +212,70 @@ let products =
     },
    
 ]
+
+
+let container = document.getElementById("container");
+
+let cartData = JSON.parse(localStorage.getItem("cart-data")) || []
+// console.log(cartData)
+let filtered = document.getElementById("filter");
+filtered.addEventListener("change",function(){
+    if(filtered.value ==""){
+        DisplayProduct(products)
+    }else{
+        let filteredData = products.filter(function(product){
+            return product.category == filtered.value
+        })
+        DisplayProduct(filteredData)
+    }
+})
+
+
+function DisplayProduct(data){
+    container.innerHTML = ""
+    products.forEach(function(ele){
+        let card = document.createElement("div");
+        
+        let image = document.createElement("img");
+        image.setAttribute("src",ele.img);
+
+        let name = document.createElement("h2");
+        name.innerText = ele.title;
+
+        let category = document.createElement("h5");
+        category.innerText = ele.category
+
+        let price = document.createElement("h2");
+        price.innerText = ele.price;
+        
+        let addToCart = document.createElement("button");
+        addToCart.innerText = "Add To Cart"
+
+        addToCart.addEventListener("click",function(){
+            if(checkAvailable(ele)){
+                alert("product already added in cart")
+            }else{
+                cartData.push(ele);
+                localStorage.setItem("cart-data",JSON.stringify(cartData));
+                alert("Product added to cart")
+            }
+        })
+
+        let buyNow = document.createElement("button");
+        buyNow.innerText = "Buy Now"
+
+        card.append(image,name,category,price,addToCart,buyNow)
+        container.append(card);
+    })
+}
+
+function checkAvailable(ele){
+    for(let i=0;i<cartData.length;i++){
+      if(ele.prodId == cartData[i].prodId){
+        return true;
+      }
+    }
+    return false;
+  }
+
+DisplayProduct(products);
