@@ -1,0 +1,41 @@
+#nav{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    margin: auto;
+    margin-bottom: 20px;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+#logo{
+    width: 120px;
+}
+#logo img{
+    width: 100%;
+}
+#menu img{
+    width: 50px;
+}
+#container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+  }
+  #container img{
+    width: 50%;
+  }
+  #container>div{
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    padding: 10px;
+    line-height: 28px;
+  }
+  #container button{
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-weight: bold;
+    background-color: rgb(120, 225, 237);
+  }

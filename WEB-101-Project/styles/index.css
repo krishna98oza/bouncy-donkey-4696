@@ -18,7 +18,7 @@
             display: flex;
             justify-content: space-around;
         } 
-        #option>a{
+        #option a{
             text-decoration: none;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             color: black;
@@ -39,6 +39,7 @@
         #top{
             margin: auto;
             width: 100%;
+            margin-top: 20px;
         }
         #top>img{
             width: 100%;
@@ -46,10 +47,10 @@
         #logo{
              width: 120px;
         }
-        #logo>img{
+        #logo img{
              width: 100%;
         }
-        #menu>img{
+        #menu img{
             width: 30px;
         }
         #menu>img:nth-child(2){
@@ -143,13 +144,42 @@
             width: 100%;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         }
-        #arrivals{
-            width: 90%;
-            display: none;
-        }
+        
         #option>a:nth-child(1):hover{
             font-weight: bold;
         }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+          }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            /* width: 500px; */
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+          }
+          .dropdown-content>div{
+            padding: 40px;
+          }
+          
+          .dropdown-content a:hover {background-color: #ddd;}
+          
+          .dropdown:hover .dropdown-content {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+        .dropdown:hover .dropdown-content img{
+            width: 250px;
+        }
+        .dropdown:hover .dropdown-content h2,p{
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+          
+          .dropdown:hover .dropbtn {font-weight: bolder;}
+
 
         @media all and (min-width: 551px) and (max-width: 1000px) {
             #nav>#option{
@@ -166,4 +196,24 @@
             #mid{
                 grid-template-columns: repeat(1,1fr);
             }
+          }
+
+          #footer{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            margin-top: 20px;
+            margin-bottom: 50px;
+            margin-left: 50px;
+          }
+          #footer h1{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: rgb(48, 45, 45);
+            margin-bottom: 20px;
+          }
+          #footer li{
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: rgb(86, 82, 82);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            cursor: pointer;
           }
