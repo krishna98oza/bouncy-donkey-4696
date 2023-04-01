@@ -4,18 +4,22 @@ let userId = document.getElementById("user-id");
 let userPass = document.getElementById("user-pass");
 let logIn = document.getElementById("log");
 
-let loggedinData = JSON.perse(localStorage.getItem(logged-data)) || [];
+let loggedinData = JSON.parse(localStorage.getItem("logged-data")) || [];
 
 let flag=false;
-for(let i=0;i<signinData.length;i++){
-    if(userId.value === signinData[i].name && userPass.value === signinData[i].Password){
-        flag=true;
-        alert("Succesfully Logged In");
-        loggedinData.push(signinData[i], {flag:true});
-        localStorage.setItem("logged-data",JSON.stringify(loggedinData))
-        break;
+logIn.addEventListener("click",function(){
+    for(let i=0;i<signinData.length;i++){
+        if(userId.value === signinData[i].name && userPass.value === signinData[i].Password){
+            flag=true;
+            loggedinData.push(signinData[i], {flag:true});
+            localStorage.setItem("logged-data",JSON.stringify(loggedinData))
+            alert("Succesfully Logged In");
+            window.location.href = "index.html"
+            break;
+        }
     }
-}
-if(flag != true){
-    alert("Wrong Credentials");
-}
+    if(flag == false){
+        alert("Wrong Credentials");
+    }
+})
+

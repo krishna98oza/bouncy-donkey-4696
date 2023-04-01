@@ -18,4 +18,12 @@ setInterval(function (){
     image.setAttribute("src",arr1[counter])
 },3000)
 
+// let cartLogo = document.getElementById("cartLogo");
+// cartLogo.addEventListener("click",function(){
+//     window.location.href = "buy.html"
+// })
 
+// let top = document.querySelector("#top>img");
+top.addEventListener("click",function(){
+    window.location.href = "products.html"
+})

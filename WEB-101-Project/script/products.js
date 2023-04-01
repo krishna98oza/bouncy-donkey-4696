@@ -264,6 +264,10 @@ function DisplayProduct(data){
         let buyNow = document.createElement("button");
         buyNow.innerText = "Buy Now"
 
+        buyNow.addEventListener("click",function(){
+            window.location.href = "buy.html"
+        })
+
         card.append(image,name,category,price,addToCart,buyNow)
         container.append(card);
     })
