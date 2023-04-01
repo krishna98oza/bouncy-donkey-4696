@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+           #payment{
+            display: block;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        #payment-wrapper {
+            position: absolute;
+            top: 40%;
+            left: 52%;
+            transform: translate(-50%, -50%);
+            background-color: #eceaea;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+        #payment-form {
+            padding: 20px;
+        }
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        #close-payment-form {
+            background-color: #6b6767;
+            color: #eae5e5;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            position: absolute;
+            top: 30px;
+            right: 10px;
+        }
+        label , input{
+            display: block;
+            width: 300px;
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 4px;
+            border-color: rgb(151, 147, 147);
+        }
+        #pay{
+            padding: 5px;
+            margin-left: 50%;
+            margin-top: 150px;
+        }
+    </style>
+</head>
+<body>
+    <button id="pay">Make Payment</button>
+
+    <div id="payment">
+        <div id="payment-wrapper">
+          <form id="payment-form">
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+            <label for="card-expiry">Expiry Date:</label>
+            <input type="text" id="card-expiry" placeholder="MM / YY" required>
+            <label for="card-cvc">CVC:</label>
+            <input type="text" id="card-cvc" placeholder="123" required>
+            <button type="submit" id="submit-payment">Submit Payment</button>
+          </form>
+          <button id="close-payment-form">Close</button>
+        </div>
+      </div>
+</body>
+<script>
+   
+
+
+let paymentContainer = document.getElementById('payment');
+let makePayment = document.getElementById('pay');
+let closePayment = document.getElementById('close-payment-form');
+
+
+makePayment.addEventListener('click', function(event) {
+ 
+  paymentContainer.style.display = 'block';
+});
+
+closePayment.addEventListener('click', function(event) {
+  
+  paymentContainer.style.display = 'none';
+});
+
+</script>
+</html>
