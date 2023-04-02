@@ -4,12 +4,12 @@
     display: flex;
     margin: auto;
     margin-bottom: 20px;
-    justify-content: space-around;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 #logo{
     width: 120px;
+    margin-left: 20px;
 }
 #logo img{
     width: 100%;
@@ -38,4 +38,25 @@
     padding: 10px;
     font-weight: bold;
     background-color: rgb(120, 225, 237);
+  }
+  span{
+    font-weight: bold;
+    margin-left: 5px;
+  }
+
+  @media all and (min-width: 551px) and (max-width: 1000px) {
+    #nav>#option{
+        display: none;
+    }
+    #container{
+        grid-template-columns: repeat(3,1fr);
+    }
+  }
+  @media all and (max-width: 550px) {
+    #nav>#option{
+        display: none;
+    }
+    #container{
+        grid-template-columns: repeat(2,1fr);
+    }
   }
