@@ -19,16 +19,26 @@ function DisplayProduct(data){
 
         let price = document.createElement("h2");
         price.innerText = ele.price;
+
+        let decreament = document.createElement("button");
+        let increament = document.createElement("button");
+        let newquantity = document.createElement("span");
         
         let remove = document.createElement("button");
         remove.innerText = "Remove"
+
+        let count = 1
+        increament.innerText = "+"
+        decreament.innerText = "-"
+        newquantity.innerText = ele.quantity
+        // console.log(typeof(newquantity.innerText))
 
         remove.addEventListener("click",function(){
            cartData = cartData.filter(function (element){
             return element.prodId !== ele.prodId
            });
-           localStorage.setItem("cart-remove",JSON.stringify(cartData))
-           DisplayProduct()
+           localStorage.setItem("cart-data",JSON.stringify(cartData))
+           DisplayProduct(cartData)
         })
 
         let buyNow = document.createElement("button");
@@ -37,15 +47,29 @@ function DisplayProduct(data){
         buyNow.addEventListener("click",function(){
           window.location.href = "buy.html"
         })
+        
+        increament.addEventListener("click",function(){
+          
+          ele.quantity++
+           localStorage.setItem("cart-data",JSON.stringify(cartData))
+           DisplayProduct(cartData)
+          })
+        decreament.addEventListener("click",function(){
+          if(ele.quantity > 1){
+            ele.quantity--;
+            localStorage.setItem("cart-data",JSON.stringify(cartData))
+            DisplayProduct(cartData)
+          }
+        })
 
-        card.append(image,name,category,price,remove,buyNow)
+        card.append(image,name,category,price,increament,newquantity,decreament,remove,buyNow)
         container.append(card);
     })
     let total = document.getElementById("cart-total");
 
       let sum = 0;
       for(let i=0;i<cartData.length;i++){
-        sum += cartData[i].price;
+        sum += cartData[i].price * cartData[i].quantity
       }
       total.innerText = sum;
 }

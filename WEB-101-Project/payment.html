@@ -7,7 +7,7 @@
     <title>Document</title>
     <style>
            #payment{
-            display: block;
+            display: none;
             position: fixed;
             z-index: 9999;
             left: 0;
@@ -60,10 +60,12 @@
             border-color: rgb(151, 147, 147);
         }
         #pay{
+            display: block;
             padding: 5px;
             margin-left: 50%;
             margin-top: 150px;
         }
+        
     </style>
 </head>
 <body>
@@ -78,11 +80,12 @@
             <input type="text" id="card-expiry" placeholder="MM / YY" required>
             <label for="card-cvc">CVC:</label>
             <input type="text" id="card-cvc" placeholder="123" required>
-            <button type="submit" id="submit-payment">Submit Payment</button>
+            <button type="submit" id="submit-payment">Payment</button>
           </form>
           <button id="close-payment-form">Close</button>
         </div>
       </div>
+      
 </body>
 <script>
    
@@ -91,8 +94,7 @@
 let paymentContainer = document.getElementById('payment');
 let makePayment = document.getElementById('pay');
 let closePayment = document.getElementById('close-payment-form');
-
-
+let paid = document.getElementById("submit-payment")
 makePayment.addEventListener('click', function(event) {
  
   paymentContainer.style.display = 'block';
@@ -102,6 +104,12 @@ closePayment.addEventListener('click', function(event) {
   
   paymentContainer.style.display = 'none';
 });
+
+paid.addEventListener("click", function(){
+    alert("Oreder Successfully Placed")
+    window.location.href = "index.html"
+
+})
 
 </script>
 </html>

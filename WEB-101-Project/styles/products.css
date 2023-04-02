@@ -96,8 +96,6 @@
       
       .dropdown:hover .dropbtn {font-weight: bolder;}
 
-      
-
       #filter{
         margin-top: 20px;
         margin-bottom: 30px;
@@ -124,6 +122,9 @@
         padding: 10px;
         font-weight: bold;
         background-color: rgb(120, 225, 237);
+      }
+      #cartLogo{
+        width: 32px;
       }
 
       @media all and (min-width: 551px) and (max-width: 1000px) {

@@ -37,7 +37,7 @@
             border-radius: 4px;
             border-color: rgb(151, 147, 147);
         }
-        #submit-address{
+        #proceed{
             margin-top: 20px;
             margin-bottom: 20px;
             border-radius: 2px;
@@ -68,7 +68,7 @@
                 <label for="address2">PIN Code :</label>
                 <input type="text" placeholder="Enter Your PIN" required>
     
-                <button type="submit" id="submit-address">Proceed</button>
+                <button id="proceed">Proceed</button>
                 <button id="close">Close</button>
             </form>
         </div>
@@ -76,13 +76,16 @@
 
 </body>
 <script>
-    let inputs = document.querySelectorAll("input")
-    let proceed = document.getElementById("submit-address");
+    // let inputs = document.querySelectorAll("input")
+    // let proceed = document.getElementById("proceed");
 
     proceed.addEventListener("click",function(){
-        if(inputs.value.length > 1){
-            window.location.href = "payment.html"
-        }
+        // let inputs = document.querySelectorAll("input").value
+        // let proceed = document.getElementById("proceed").value
+        // if(input.length > 1 ){
+        //     window.location.href = "payment.html"
+        // }
+        window.location.href = "payment.html"
     })
 </script>
 </html>
